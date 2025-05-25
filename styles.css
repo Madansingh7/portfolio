@@ -4,23 +4,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f5f7;
-    color: #ffffff;
-}
-
-.maindiv {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background-color: #000000d2;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
+    color: #1a1a1a;
 }
 
 /* Header */
 header {
     text-align: center;
-    padding: 0.2px;
+    padding: 50px;
     background-color: #1e1e2f;
     color: #ffffff;
 }
@@ -30,16 +20,13 @@ header img {
     width: 150px;
     height: 150px;
     border: 3px solid #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    transition: transform 0.3s;
 }
 
 header h1 {
     font-size: 3em;
     margin: 0;
     color: #ffffff;
-    font-weight: 100;
+    font-weight: 700;
 }
 
 header p {
