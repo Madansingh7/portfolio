@@ -309,34 +309,7 @@ a i:hover {
 }
 
 /* ---------------------------FOOTER SECTION ------------------------------------------- */
-/* Footer & view count */
-
-.counter-box {
-  background: #ffffff;
-  padding: 30px 50px;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
-  text-align: center;
-}
-
-.counter-box h1 {
-  font-size: 22px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.view-count {
-  font-size: 20px;
-  color: #000000;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: bold;
-}
-
-.view-count i {
-  color: #0af3ff;
-}
+/* Footer*/
 
 footer {
     text-align: center;
