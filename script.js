@@ -1,4 +1,8 @@
-// ✅ Your Firebase config
+// ✅ Modular Firebase v9+ Imports
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.24.0/firebase-app.js";
+import { getDatabase, ref, runTransaction } from "https://www.gstatic.com/firebasejs/9.24.0/firebase-database.js";
+
+// ✅ Your Firebase Configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCiOKjtAT4Ho4_E8pB6OPKcA8W8v6-99-g",
   authDomain: "portfolio-views-e5193.firebaseapp.com",
@@ -10,21 +14,21 @@ const firebaseConfig = {
   measurementId: "G-B3T570VTWC"
 };
 
-// ✅ Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
-const viewRef = db.ref("viewCount");
+// ✅ Initialize Firebase & Database
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+const viewRef = ref(db, 'viewCount');
 
-// 🔁 Increment and Display View Count
-viewRef.transaction(current => {
+// 🔁 Increment & Display View Count
+runTransaction(viewRef, current => {
   return (current || 0) + 1;
-}, (error, committed, snapshot) => {
-  if (error) {
-    console.error("Firebase error:", error);
-    document.getElementById("visitCount").innerText = "N/A";
-  } else {
-    document.getElementById("visitCount").innerText = snapshot.val() + " views";
-  }
+}).then(result => {
+  const count = result.snapshot.val();
+  document.getElementById("visitCount").innerText = count + " views";
+}).catch(error => {
+  console.error("Firebase error:", error);
+  document.getElementById("visitCount").innerText = "N/A";
 });
+
 
 
