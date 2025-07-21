@@ -1,8 +1,8 @@
-// ✅ Modular Firebase v9+ Imports
+// script.js (MUST be saved as a real file, not inline)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.24.0/firebase-app.js";
-import { getDatabase, ref, runTransaction } from "https://www.gstatic.com/firebasejs/9.24.0/firebase-database.js";
+import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/9.24.0/firebase-database.js";
 
-// ✅ Your Firebase Configuration
+// Replace these with your real Firebase config values
 const firebaseConfig = {
   apiKey: "AIzaSyCiOKjtAT4Ho4_E8pB6OPKcA8W8v6-99-g",
   authDomain: "portfolio-views-e5193.firebaseapp.com",
@@ -14,17 +14,20 @@ const firebaseConfig = {
   measurementId: "G-B3T570VTWC"
 };
 
-// ✅ Initialize Firebase & Database
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-const viewRef = ref(db, 'viewCount');
+const database = getDatabase(app);
 
-// 🔁 Increment & Display View Count
-runTransaction(viewRef, current => {
-  return (current || 0) + 1;
-}).then(result => {
-  const count = result.snapshot.val();
-  document.getElementById("visitCount").innerText = count + " views";
+// Counter logic
+const counterRef = ref(database, 'viewCount');
+
+get(counterRef).then(snapshot => {
+  let count = 1;
+  if (snapshot.exists()) {
+    count = snapshot.val() + 1;
+  }
+  set(counterRef, count);
+  document.getElementById("visitCount").innerText = `${count} views`;
 }).catch(error => {
   console.error("Firebase error:", error);
   document.getElementById("visitCount").innerText = "N/A";
