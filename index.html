@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madan Raj | Portfolio</title>
+    <title>Madan Singh | Portfolio</title>
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="styles.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/devicon@2.15.1/devicon.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
@@ -24,48 +36,90 @@
     </header>
 
     <section id="about">
-        <h2>About Me</h2>
+        <h2>About Me :</h2>
         <hr>
         <div class="about">
-        <p>I am a Computer Science student at SDMCET, passionate about coding, web development. Currently just exploring coding</p>
+        <p>
+            <p>
+             I'm <b>Madan</b>, an engineering student <b>@SDMCET</b> with a strong interest in self-development. I am currently building a solid foundation in programming. With a passion for coding and technology, I am eager to continuously enhance my skills and grow as a developer.
+            </p>
+
+        <ul>
+            <h4>🌟Key Highlights :</h4>
+            <br>
+            <li>🎓 Pursuing B.E. in Computer Science Engineering at SDMCET</li>
+            <br>
+            <li>💻 Currently learning C++ with DSA</li>
+            <br>
+            <li>🧠 Passionate about web development, with hands-on experience in HTML, CSS, and building clones (like Amazon)</li>
+            <br>
+            <li>🧮 Regularly building logic with problem-solving and algorithms</li>
+            <br>
+            <li>⚙️ Recently scored 9.43 CGPA in 1st year, maintaining academic performance</li>
+            <br>
+            <li>🧰 Tools I use: VS Code, GitHub</li>
+        </ul>
+        </p>
         </div>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
+    <section id="projects"> 
+        <h2>Projects :</h2>
         <hr>
         <div class="project">
+            <i class="fab fa-amazon"></i>
             <h3>Amazon Clone</h3>
             <p>A static e-commerce website using HTML & CSS.</p>
-            <a href="https://github.com/Madansingh7/Simple-Amazon-clone/blob/f3dc82428e469c4c1af1c41b346861b2cdaae77b/index.html">View Project</a>
+            <!-- <a href="https://github.com/Madansingh7/Simple-Amazon-clone/blob/f3dc82428e469c4c1af1c41b346861b2cdaae77b/index.html">View Project</a> -->
+            
+            <button class="btn" onclick="window.location.href='https://github.com/Madansingh7/Simple-Amazon-clone/blob/f3dc82428e469c4c1af1c41b346861b2cdaae77b/index.html'">Click Here</button>
+
         </div>
     </section>
 
     <section id="skills">
-        <h2>Skills</h2>
+        <h2>Skills :</h2>
         <hr>
-        <ul>
-            <li><img src="html.png" alt="HTML" class="skill-icon">  HTML</li>
-            <li><img src="css.webp" alt="CSS" class="skill-icon">  CSS</li>
-            <li><img src="linux.png" alt="Linux" class="skill-icon"> Basic Linux</li>
-            <li><img src="cyber.jpg" alt="Cyber Security" class="skill-icon"> Cyber Security</li>
-            <li><img src="c.png" alt="C Programming" class="skill-icon"> C Programming</li>
-        </ul>
+        <div class="skills">
+            <i class="devicon-html5-plain colored" title="HTML"></i>
+            <i class="devicon-css3-plain colored" title="CSS"></i>
+            <i class="devicon-linux-plain colored" title="Linux"></i>
+            <i class="devicon-c-plain colored" title="C Programming"></i>
+            <i class="devicon-cplusplus-plain colored" title="C++"></i>
+            <i class="devicon-vscode-plain colored" title="VS code"></i>
+            <i class="devicon-github-original colored" title="GitHub"></i>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Me</h2>
+        <h2>Contact Me :</h2>
         <hr>
-    <p><img src="email.png" alt="Email" class="contact-icon">
-        <a href="mailto:madansingh7@yahoo.com">E-mail</a>
-    </p>
-    <p>
-        <img src="linkedIn.png" alt="LinkedIn" class="contact-icon">
-        <a  href="https://in.linkedin.com/in/madan-singh-rajpurohit-a1568532a?trk=profile-badge">LinkedIn</a>
-    </p>
+        <div class="contact">
+             <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/madansingh7" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin linkedin-icon"></i>
+           </a>
+            <!-- Email -->
+            <a href="mailto:madansingh7@yahoo.com" aria-label="Email">
+              <i class="fas fa-envelope email-icon"></i>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/madansingh7" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github github-icon"></i>
+            </a>
+        </div>
     </section>
-
+    
     <footer>
+        <div class="counter-box">
+            <div class="view-count">
+                <i class="fas fa-eye"></i>
+                <span id="visitCount">Loading...</span>
+            </div>
+            <script src="script.js"></script>
+        </div>
+
+    
         <p>&copy; 2025 Madan Singh R. All rights reserved.</p>
     </footer>
 </body>
