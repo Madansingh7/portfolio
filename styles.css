@@ -311,6 +311,25 @@ a i:hover {
 /* ---------------------------FOOTER SECTION ------------------------------------------- */
 /* Footer*/
 
+.counter-box h1 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.view-count {
+  font-size: 20px;
+  color: #000000;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.view-count i {
+  color: #0af3ff;
+}
+
 footer {
     text-align: center;
     padding: 20px;
