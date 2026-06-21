@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0f19">
+    <title>Madan Singh | Developer Portfolio</title>
+
+    <!-- Meta tags for SEO -->
+    <meta name="description"
+        content="Portfolio of Madan Singh R., Computer Science & Engineering student at SDMCET. Explore projects, academic stats (9.45 CGPA), certifications, and interactive terminal features.">
+    <meta name="keywords"
+        content="Madan Singh, Madan Singh Rajpurohit, portfolio, computer science student, SDMCET, C++, web developer, investment scam detector, front-end engineer">
+    <meta name="author" content="Madan Singh R.">
+
+    <!-- Title Icons / Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="canonical" href="https://madansingh7.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Madan Singh | Software Engineer & Developer Portfolio">
+    <meta property="og:description"
+        content="Portfolio of Madan Singh R., Computer Science & Engineering student at SDMCET. Explore projects, academic stats, certifications, and interactive terminal features.">
+    <meta property="og:url" content="https://madansingh7.github.io/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Madan Singh | Software Engineer & Developer Portfolio">
+    <meta name="twitter:description"
+        content="Portfolio of Madan Singh R., Computer Science & Engineering student at SDMCET. Explore projects, academic stats, certifications, and interactive terminal features.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome CDNs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Devicon CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Custom Style Overrides for Light/Dark Theme Adaptability -->
+    <style>
+        .github-heatmap-img {
+            width: 100%;
+            min-width: 650px;
+            opacity: 0.9;
+            mix-blend-mode: screen;
+        }
+
+        [data-theme="light"] .github-heatmap-img {
+            mix-blend-mode: normal;
+            filter: contrast(1.1) brightness(0.9);
+        }
+
+        .site-footer {
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            overflow: hidden;
+        }
+
+        .internship-status-banner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 3rem 1rem 0 1rem;
+        }
+
+        .internship-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--card-surface);
+            border: 1px solid var(--card-border);
+            padding: 0.6rem 1.25rem;
+            border-radius: var(--radius-pill);
+            box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-speed) var(--transition-ease);
+        }
+
+        .internship-status-badge:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 5px 15px var(--accent-glow);
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #10b981;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .pulse-dot::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #10b981;
+            border-radius: 50%;
+            animation: badge-pulse 1.8s infinite ease-in-out;
+        }
+
+        @keyframes badge-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .badge-text {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        /* Terminal readability & responsiveness fixes */
+        .terminal-body {
+            overflow-x: hidden !important;
+        }
+
+        .terminal-body pre {
+            white-space: pre-wrap !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            margin: 0 !important;
+            font-family: inherit !important;
+            font-size: inherit !important;
+            color: inherit !important;
+        }
+
+        .terminal-line {
+            word-break: normal !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+
+        .system-line,
+        .terminal-title {
+            color: #a3b3c9 !important;
+            /* Brighter slate for better readability on black background */
+        }
+
+        @media (max-width: 768px) {
+            .terminal-window {
+                height: 340px !important;
+                font-size: 0.78rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terminal-window {
+                height: 320px !important;
+                font-size: 0.72rem !important;
+            }
+
+            .terminal-input-line .prompt {
+                font-size: 0.72rem !important;
+            }
+
+            #terminal-input {
+                font-size: 0.72rem !important;
+            }
+        }
+
+        /* Custom Blinking Block Cursor for Terminal */
+        .terminal-input-wrapper {
+            position: relative;
+            flex-grow: 1;
+            display: inline-flex;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.813rem;
+            cursor: text;
+        }
+
+        #terminal-typer {
+            color: #e2e8f0;
+            white-space: pre-wrap;
+            pointer-events: none;
+            order: 1;
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background-color: #10b981;
+            /* Bold green cursor */
+            margin-left: 2px;
+            animation: terminal-blink 1s step-end infinite;
+            pointer-events: none;
+            order: 2;
+        }
+
+        @keyframes terminal-blink {
+
+            from,
+            to {
+                background-color: transparent
+            }
+
+            50% {
+                background-color: #10b981;
+            }
+        }
+
+        #terminal-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent !important;
+            color: transparent !important;
+            caret-color: transparent !important;
+            border: none !important;
+            outline: none !important;
+            font-family: inherit;
+            font-size: inherit;
+            padding: 0;
+            margin: 0;
+            z-index: 2;
+        }
+
+        #terminal-input:placeholder-shown~.terminal-cursor {
+            order: 1;
+            margin-left: 0;
+        }
+
+        #terminal-input:placeholder-shown~#terminal-typer {
+            order: 2;
+            margin-left: 6px;
+        }
+
+        #terminal-input:placeholder-shown~#terminal-typer::before {
+            content: "type 'help' for commands...";
+            color: #64748b;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 480px) {
+            .terminal-input-wrapper {
+                font-size: 0.72rem !important;
+            }
+
+            .terminal-cursor {
+                height: 13px;
+                width: 6px;
+            }
+        }
+
+        /* Timeline Present dot pulsing growing animation */
+        .timeline-dot.active-dot {
+            background-color: var(--accent-primary) !important;
+            animation: timeline-dot-pulse-always 2s infinite ease-in-out !important;
+        }
+
+        @keyframes timeline-dot-pulse-always {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 var(--accent-primary);
+            }
+
+            50% {
+                transform: scale(1.3);
+                box-shadow: 0 0 0 10px rgba(0, 242, 254, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 242, 254, 0);
+            }
+        }
+
+        /* Dynamic Scrolled Navbar styling */
+        .navbar {
+            background-color: transparent !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border-bottom-color: transparent !important;
+            box-shadow: none !important;
+            transition: all 0.4s ease !important;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(11, 15, 25, 0.28) !important;
+            backdrop-filter: blur(16px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+            border-bottom-color: var(--card-border) !important;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03) !important;
+        }
+
+        :root[data-theme="light"] .navbar.scrolled {
+            background-color: rgba(241, 245, 249, 0.28) !important;
+            border-bottom-color: rgba(0, 0, 0, 0.06) !important;
+        }
+
+        /* AI Assistant Button & Chat Panel Styles */
+        #ai-widget-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 10000;
+            font-family: inherit;
+        }
+
+        /* Floating Button styling */
+        .ai-chat-trigger {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 1px solid var(--card-border);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(0, 242, 254, 0.2));
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px var(--accent-glow), var(--neu-raised-sm);
+            transition: all var(--transition-speed) var(--transition-ease);
+            outline: none;
+        }
+
+        .ai-chat-trigger:hover {
+            transform: translateY(-4px) scale(1.05);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 40px var(--accent-glow), var(--neu-raised);
+            color: #fff;
+        }
+
+        /* Pulse Ring animation for trigger button */
+        .btn-pulse-ring {
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-primary);
+            opacity: 0;
+            animation: ai-btn-pulse 3s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes ai-btn-pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.15);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+        }
+
+        .ai-btn-icon-wrapper i {
+            filter: drop-shadow(0 0 8px var(--accent-primary));
+            transition: transform 0.5s ease;
+        }
+
+        .ai-chat-trigger:hover .ai-btn-icon-wrapper i {
+            transform: rotate(360deg);
+        }
+
+        /* AI Chat Panel styling */
+        .ai-panel-container {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 520px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--card-border);
+            background: var(--card-surface);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.9) translateY(20px);
+            visibility: hidden;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 10001;
+        }
+
+        .ai-panel-container.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            visibility: visible;
+            pointer-events: all;
+        }
+
+        /* Panel Header styling */
+        .ai-panel-header {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(90deg, rgba(139, 92, 246, 0.1), rgba(0, 242, 254, 0.1));
+        }
+
+        .ai-header-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ai-avatar-wrapper {
+            position: relative;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .ai-avatar-status {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #10b981;
+            border: 2px solid var(--card-surface);
+        }
+
+        .ai-header-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ai-assistant-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .ai-assistant-status {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        .ai-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-speed) var(--transition-ease);
+        }
+
+        .ai-close-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        /* Panel Body / Messages styling */
+        .ai-panel-body {
+            flex-grow: 1;
+            padding: 1.25rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            scroll-behavior: smooth;
+        }
+
+        .ai-messages-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .ai-message {
+            display: flex;
+            width: 100%;
+            margin-bottom: 4px;
+        }
+
+        .ai-message.assistant {
+            justify-content: flex-start;
+        }
+
+        .ai-message.user {
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 82%;
+            padding: 0.75rem 1rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            line-height: 1.45;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .ai-message.assistant .message-bubble {
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border-bottom-left-radius: 4px;
+            border: 1px solid var(--card-border);
+        }
+
+        .ai-message.user .message-bubble {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: #fff;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0 4px 12px var(--accent-glow);
+        }
+
+        /* typing indicator */
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 8px;
+        }
+
+        .typing-indicator span {
+            width: 6px;
+            height: 6px;
+            background-color: var(--text-muted);
+            border-radius: 50%;
+            display: inline-block;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .typing-indicator span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1.0);
+            }
+        }
+
+        /* Panel Footer / Inputs styling */
+        .ai-panel-footer {
+            padding: 1rem 1.25rem;
+            border-top: 1px solid var(--card-border);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .ai-suggested-prompts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            max-height: 90px;
+            overflow-y: auto;
+            padding-bottom: 2px;
+        }
+
+        .ai-suggestion-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            cursor: pointer;
+            transition: all var(--transition-speed) var(--transition-ease);
+            white-space: nowrap;
+        }
+
+        .ai-suggestion-btn:hover {
+            background-color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .ai-input-form {
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 4px 6px 4px 12px;
+            transition: border-color var(--transition-speed) var(--transition-ease);
+        }
+
+        .ai-input-form:focus-within {
+            border-color: var(--accent-primary);
+        }
+
+        #ai-chat-input {
+            flex-grow: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            padding: 8px 0;
+        }
+
+        #ai-chat-input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        #ai-chat-send {
+            background: var(--accent-primary);
+            color: #fff;
+            border: none;
+            outline: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-speed) var(--transition-ease);
+            box-shadow: 0 2px 8px var(--accent-glow);
+        }
+
+        #ai-chat-send:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-secondary);
+        }
+
+        /* Theme adjustments for light/dark mode */
+        :root[data-theme="light"] .ai-message.assistant .message-bubble {
+            background-color: #f1f5f9;
+        }
+
+        :root[data-theme="light"] .ai-message.user .message-bubble {
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
+        }
+
+        :root[data-theme="light"] .ai-suggestion-btn {
+            background: #f1f5f9;
+        }
+
+        :root[data-theme="light"] .ai-suggestion-btn:hover {
+            background-color: #7c3aed;
+            color: #fff;
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            #ai-widget-container {
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .ai-chat-trigger {
+                width: 52px;
+                height: 52px;
+                font-size: 1.3rem;
+            }
+
+            .ai-panel-container {
+                bottom: 70px;
+                width: calc(100vw - 32px);
+                max-width: 360px;
+                height: 480px;
+            }
+        }
+    </style>
+
+    <!-- Prevent Theme Flash -->
+    <script>
+        (() => {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- Page Preloader -->
+    <div id="preloader" aria-hidden="true">
+        <div class="preloader-content">
+            <div class="preloader-spinner"></div>
+            <div class="preloader-logo">MADAN</div>
+            <div class="preloader-text">Loading Page...</div>
+        </div>
+    </div>
+
+    <!-- Nav Overlay Backdrop (for drawer) -->
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+    <!-- Background Canvas for Interactive Particles -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- -------------------------------------------------------------------------
+       1. Navigation Header
+       ------------------------------------------------------------------------- -->
+    <nav class="navbar" aria-label="Primary">
+        <div class="container nav-container">
+            <!-- Logo is removed to not add name on navigation -->
+
+            <ul class="nav-links" id="nav-menu" aria-hidden="true">
+                <li><a href="#hero"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+                <li><a href="#skills"><i class="fa-solid fa-code"></i> Skills</a></li>
+                <li><a href="#profiles"><i class="fa-solid fa-network-wired"></i> Profiles</a></li>
+                <li><a href="#projects"><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+                <li><a href="#timeline"><i class="fa-solid fa-timeline"></i> Journey</a></li>
+                <li><a href="#certifications"><i class="fa-solid fa-trophy"></i> Achievements</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- Theme toggle button -->
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <!-- Hamburger menu toggle -->
+                <button class="nav-mobile-btn" id="mobile-toggle" aria-label="Open mobile menu" aria-controls="nav-menu"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- -------------------------------------------------------------------------
+       2. Hero Section
+       ------------------------------------------------------------------------- -->
+    <section id="hero" class="container">
+        <div class="hero-grid">
+            <div class="hero-content" data-reveal>
+                <span class="hero-badge">std::cout &lt;&lt; "Hello World!";</span>
+                <h1 class="hero-name" id="hero-typing-name"></h1>
+
+                <!-- Typing effect container -->
+                <div class="hero-typing">
+                    <span id="typing-text"></span>
+                </div>
+
+                <p class="hero-desc">
+                    Engineering student at SDMCET focused on data structures, algorithmic logic, and
+                    responsive websites.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fa-solid fa-code"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fa-solid fa-envelope"></i> Let's Connect
+                    </a>
+                </div>
+
+                <div class="hero-socials">
+                    <a href="https://github.com/madansingh7" target="_blank" rel="noopener" class="hero-social-link"
+                        aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/madansingh7" target="_blank" rel="noopener"
+                        class="hero-social-link" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:madansingh7@yahoo.com" class="hero-social-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Terminal Mockup on the right side -->
+            <div class="hero-visual delay-200" data-reveal>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-red"></span>
+                            <span class="btn-yellow"></span>
+                            <span class="btn-green"></span>
+                        </div>
+                        <div class="terminal-title">bash - madan@sdmcet:~</div>
+                    </div>
+                    <div class="terminal-body" id="terminal-output">
+                        <!-- Printed dynamically by script.js -->
+                    </div>
+                    <div class="terminal-input-line">
+                        <span class="prompt">visitor@madansingh:~$</span>
+                        <div class="terminal-input-wrapper">
+                            <input type="text" id="terminal-input" placeholder=" " autofocus autocomplete="off"
+                                spellcheck="false" aria-label="Terminal command prompt input" />
+                            <span id="terminal-typer"></span>
+                            <span class="terminal-cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internship Availability Banner -->
+    <div class="internship-status-banner-container container" data-reveal>
+        <div class="internship-status-badge">
+            <span class="pulse-dot"></span>
+            <span class="badge-text">Open for Internship Opportunities</span>
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------
+       3. About Me & Academic Stats Section
+       ------------------------------------------------------------------------- -->
+    <section id="about" class="section container">
+        <div class="section-header" data-reveal>
+            <span class="section-tag">01. PROFILE</span>
+            <h2 class="section-title">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-text" data-reveal>
+                <p>
+                    I am an engineering undergraduate pursuing my B.E. in <b>Computer Science Engineering</b> at <b>SDM
+                        College of Engineering & Technology (SDMCET)</b>, Dharwad. I love building programming
+                    foundations, solving complex logical hurdles, and crafting high-performance, responsive front-ends.
+                </p>
+                <p>
+                    My learning journey is backed by strong academic consistency, achieving a <b>9.45 CGPA</b> in my
+                    first year. I regularly sharpen my problem-solving skills in <b>C++</b> on Leetcode, while exploring
+                    web
+                    technologies like HTML5 and CSS3 through real-world applications.
+                </p>
+                <p>
+                    Outside of core coursework, I participate in hackathons, building systems that apply
+                    algorithms and tech integrations to solve real-world issues.
+                </p>
+            </div>
+
+            <!-- Dashboard stats right side -->
+            <div class="stats-dashboard delay-200" data-reveal>
+                <div class="stats-meters-row">
+                    <!-- Radial meter 1: CGPA -->
+                    <div class="stat-radial-meter" data-percent="94.5" data-value="9.45" data-float="true"
+                        data-suffix="">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 100 100" width="100" height="100" aria-hidden="true" focusable="false"
+                                preserveAspectRatio="xMidYMid meet">
+                                <circle cx="50" cy="50" r="40" class="bg-circle" />
+                                <circle cx="50" cy="50" r="40" class="progress-circle"
+                                    stroke-dasharray="251.327 251.327" stroke-dashoffset="251.327" />
+                            </svg>
+                            <span class="stat-value"><span class="stat-value-text">0.00</span></span>
+                        </div>
+                        <span class="stat-label">CGPA</span>
+                        <span class="stat-sublabel">1st Year Engineering</span>
+                    </div>
+
+                    <!-- Radial meter 2: Problem Solving -->
+                    <div id="leetcode-stat-meter" class="stat-radial-meter" data-percent="16.2" data-value="97"
+                        data-float="false" data-suffix="">
+                        <div class="svg-container">
+                            <svg viewBox="0 0 100 100" width="100" height="100" aria-hidden="true" focusable="false"
+                                preserveAspectRatio="xMidYMid meet">
+                                <circle cx="50" cy="50" r="40" class="bg-circle" />
+                                <circle cx="50" cy="50" r="40" class="progress-circle secondary"
+                                    stroke-dasharray="251.327 251.327" stroke-dashoffset="251.327" />
+                            </svg>
+                            <span class="stat-value"><span class="stat-value-text">0</span></span>
+                        </div>
+                        <span class="stat-label">Coding Problems</span>
+                        <span class="stat-sublabel">Solved on LeetCode</span>
+                    </div>
+                </div>
+
+                <!-- GitHub contribution-style visualization -->
+                <div class="github-widget">
+                    <div class="github-widget-header">
+                        <span class="github-title">
+                            <i class="fa-brands fa-github"></i> madansingh7
+                        </span>
+                        <span class="github-stats-summary">Real-Time Contribution Heatmap</span>
+                    </div>
+
+                    <div class="github-graph-container"
+                        style="display: flex; justify-content: center; padding: 1.5rem; overflow-x: auto;">
+                        <img src="https://ghchart.rshah.org/40c463/madansingh7" alt="GitHub Contributions Heatmap"
+                            class="github-heatmap-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------------------------
+       4. Skills Section
+       ------------------------------------------------------------------------- -->
+    <section id="skills" class="section container">
+        <div class="section-header" data-reveal>
+            <span class="section-tag">02. CAPABILITIES</span>
+            <h2 class="section-title">Technical Stack</h2>
+        </div>
+
+        <div class="skills-wrapper">
+            <!-- Category 1: Languages -->
+            <div class="skills-category" data-reveal>
+                <h3 class="category-title">
+                    <i class="fa-solid fa-terminal"></i> Languages
+                </h3>
+                <div class="skills-list">
+                    <div class="skill-card">
+                        <span class="skill-icon java"><i class="devicon-java-plain"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">Java</span>
+                            <div><span class="skill-level-badge">Advanced Foundations & OOP</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon cpp"><i class="devicon-cplusplus-plain"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">C++</span>
+                            <div><span class="skill-level-badge">Data Structures & OOP</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon python"><i class="devicon-python-plain"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <div><span class="skill-level-badge">Basic knowledge</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon C"><i class="devicon-c-plain"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">C</span>
+                            <div><span class="skill-level-badge">Foundational knowledge</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2: Web Tech & AI APIs -->
+            <div class="skills-category delay-100" data-reveal>
+                <h3 class="category-title">
+                    <i class="fa-solid fa-globe"></i> Web Tech & AI APIs
+                </h3>
+                <div class="skills-list">
+                    <div class="skill-card">
+                        <span class="skill-icon html"><i class="devicon-html5-plain"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">HTML & CSS</span>
+                            <div><span class="skill-level-badge">Semantic Structure</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon javascript"><i class="devicon-javascript-plain"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">JavaScript</span>
+                            <div><span class="skill-level-badge">Client-Side Logic</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon php"><i class="devicon-php-plain"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">Basic PHP</span>
+                            <div><span class="skill-level-badge">Backend Scripting</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon gemini"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">Gemini & NVIDIA APIs</span>
+                            <div><span class="skill-level-badge">AI Integration</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3: Tools & OS -->
+            <div class="skills-category delay-200" data-reveal>
+                <h3 class="category-title">
+                    <i class="fa-solid fa-screwdriver-wrench"></i> Tools & Workflows
+                </h3>
+                <div class="skills-list">
+                    <div class="skill-card">
+                        <span class="skill-icon git"><i class="devicon-github-original"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">Git & GitHub</span>
+                            <div><span class="skill-level-badge">Version Control</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon linux"><i class="devicon-linux-plain"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">Linux/Ubuntu</span>
+                            <div><span class="skill-level-badge">Dev Environment</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon vscode"><i class="devicon-vscode-plain"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">VS Code</span>
+                            <div><span class="skill-level-badge">Editor</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon eclipse"><i class="devicon-eclipse-plain"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">Eclipse</span>
+                            <div><span class="skill-level-badge">IDE</span></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon ai"><i class="fa-solid fa-robot"></i></span>
+                        <div class="skill-info">
+                            <span class="skill-name">Antigravity & Codex</span>
+                            <div><span class="skill-level-badge">AI Coding Assistants</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------------------------
+       5. Technical Profiles Section
+       ------------------------------------------------------------------------- -->
+    <section id="profiles" class="section container">
+        <div class="section-header" data-reveal>
+            <span class="section-tag">03. NETWORKS</span>
+            <h2 class="section-title">Technical Profiles</h2>
+        </div>
+
+        <div class="profiles-grid">
+            <!-- LinkedIn Card -->
+            <a href="https://www.linkedin.com/in/madansingh7" target="_blank" rel="noopener"
+                class="profile-card-link delay-200" data-reveal>
+                <div class="profile-card glass-card neumorphic-card">
+                    <div class="profile-icon linkedin"><i class="fa-brands fa-linkedin"></i></div>
+                    <h3 class="profile-name">LinkedIn</h3>
+                    <p class="profile-handle">Madan Singh Rajpurohit</p>
+                    <span class="profile-link-text">Connect Professionally <i
+                            class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- GitHub Card -->
+            <a href="https://github.com/madansingh7" target="_blank" rel="noopener" class="profile-card-link"
+                data-reveal>
+                <div class="profile-card glass-card neumorphic-card">
+                    <div class="profile-icon github"><i class="fa-brands fa-github"></i></div>
+                    <h3 class="profile-name">GitHub</h3>
+                    <p class="profile-handle">@madansingh7</p>
+                    <span class="profile-link-text">Explore Repositories <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- LeetCode Card -->
+            <a href="https://leetcode.com/u/madansingh7/" target="_blank" rel="noopener"
+                class="profile-card-link delay-100" data-reveal>
+                <div class="profile-card glass-card neumorphic-card">
+                    <div class="profile-icon leetcode"><i class="fa-solid fa-code"></i></div>
+                    <h3 class="profile-name">LeetCode</h3>
+                    <p class="profile-handle">@madansingh7</p>
+                    <span class="profile-link-text">View Solved Problems <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <!-- HackerRank Card -->
+            <a href="https://www.hackerrank.com/profile/madanraj07_in" target="_blank" rel="noopener"
+                class="profile-card-link delay-300" data-reveal>
+                <div class="profile-card glass-card neumorphic-card">
+                    <div class="profile-icon hackerrank"><i class="fa-brands fa-hackerrank"></i></div>
+                    <h3 class="profile-name">HackerRank</h3>
+                    <p class="profile-handle">@madanraj07_in</p>
+                    <span class="profile-link-text">Check Coding Badges <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------------------------
+       6. Projects Section
+       ------------------------------------------------------------------------- -->
+    <section id="projects" class="section container">
+        <div class="section-header" data-reveal>
+            <span class="section-tag">04. WORKSHOPS</span>
+            <h2 class="section-title">Projects</h2>
+        </div>
+
+        <div class="projects-container">
+            <!-- Project 1: Scam Detector (FEATURED HACKATHON PROJECT) -->
+            <article class="project-card-premium featured" data-reveal>
+                <div class="project-media-mock">
+                    <div class="ui-shell">
+                        <div class="ui-shell-header">
+                            <div class="ui-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <div class="ui-address-bar">https://scam-detector.dev</div>
+                        </div>
+                        <div class="ui-shell-body">
+                            <div class="project-brand-visual scam">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <span class="visual-title">ScamDetector_AI</span>
+                                <div class="mock-status-pill"><span class="pulse-dot"></span> Active Protection</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-details">
+                    <div class="project-meta">
+                        <span class="project-badge-tag"><i class="fa-solid fa-trophy"></i> HACKATHON PROJECT</span>
+                    </div>
+                    <h3 class="project-title-text">Investment Scam Detector</h3>
+                    <p class="project-desc-text">
+                        Developed an AI-based evaluation app that identifies fraudulent or high-risk investment schemes
+                        in real time. Designed to analyze investment metrics and provide clear risk feedbacks to protect
+                        retail capital.
+                    </p>
+                    <div class="project-tech-badges">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">AI APIs</span>
+                        <span class="tech-badge">Security Analysis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://investment-scam-detector.onrender.com/" target="_blank" rel="noopener"
+                            class="btn btn-primary">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2: Multi-Modal Evidence Review Pipeline -->
+            <article class="project-card-premium featured" data-reveal>
+                <div class="project-media-mock">
+                    <div class="ui-shell">
+                        <div class="ui-shell-header">
+                            <div class="ui-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <div class="ui-address-bar">evidence-pipeline.py</div>
+                        </div>
+                        <div class="ui-shell-body">
+                            <div class="project-brand-visual evidence">
+                                <i class="fa-solid fa-images"></i>
+                                <span class="visual-title">Evidence_Pipeline</span>
+                                <div class="mock-status-pill violet"><span class="pulse-dot"></span> Pipeline Ready
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-details">
+                    <div class="project-meta">
+                        <span class="project-badge-tag"><i class="fa-solid fa-robot"></i> AI FLUENCY EVALUATION</span>
+                    </div>
+                    <h3 class="project-title-text">Multi-Modal Evidence Review</h3>
+                    <p class="project-desc-text">
+                        A Python pipeline generated fully by AI to benchmark AI developer fluency for the HackerRank
+                        Orchestrate challenge. Evaluates automated insurance claim verification by processing customer
+                        messages and physical damage evidence using Gemini multimodal vision models.
+                    </p>
+                    <div class="project-tech-badges">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Gemini API</span>
+                        <span class="tech-badge">Structured JSON</span>
+                        <span class="tech-badge">Pillow (PIL)</span>
+                        <span class="tech-badge">AI Benchmarking</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="btn btn-secondary" style="cursor: not-allowed; opacity: 0.7;">
+                            <i class="fa-solid fa-gears"></i> Backend Pipeline
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3: AI Image Detector -->
+            <article class="project-card-premium featured" data-reveal>
+                <div class="project-media-mock">
+                    <div class="ui-shell">
+                        <div class="ui-shell-header">
+                            <div class="ui-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <div class="ui-address-bar">
+                                https://github.com/Madansingh7/image-detector-by-ai-model-integration</div>
+                        </div>
+                        <div class="ui-shell-body">
+                            <div class="project-brand-visual detector">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="visual-title">Image_Detector_AI</span>
+                                <div class="mock-status-pill cyan"><span class="pulse-dot"></span> Active Model</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-details">
+                    <div class="project-meta">
+                        <span class="project-badge-tag"><i class="fa-solid fa-cube"></i> INTEGRATION PROJECT</span>
+                    </div>
+                    <h3 class="project-title-text">AI Image Detector</h3>
+                    <p class="project-desc-text">
+                        An image detection system integrated with advanced AI models. Designed to process images,
+                        perform real-time target identification, and run feature extraction with optimal latency.
+                    </p>
+                    <div class="project-tech-badges">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">AI Integration</span>
+                        <span class="tech-badge">Computer Vision</span>
+                        <span class="tech-badge">Image Processing</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Madansingh7/image-detector-by-ai-model-integration" target="_blank"
+                            rel="noopener" class="btn btn-secondary">
+                            <i class="fa-brands fa-github"></i> View Repository
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 4: Amazon Clone -->
+            <article class="project-card-premium" data-reveal>
+                <div class="project-media-mock">
+                    <div class="ui-shell">
+                        <div class="ui-shell-header">
+                            <div class="ui-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <div class="ui-address-bar">amazon-clone.local</div>
+                        </div>
+                        <div class="ui-shell-body">
+                            <div class="project-brand-visual amazon">
+                                <i class="fa-brands fa-amazon"></i>
+                                <span class="visual-title">Amazon_Clone</span>
+                                <div class="mock-status-pill yellow"><span class="pulse-dot"></span> Static Mirror</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-details">
+                    <div class="project-meta">
+                        <span class="project-badge-tag">Front-End Layout</span>
+                    </div>
+                    <h3 class="project-title-text">Amazon E-Commerce Clone</h3>
+                    <p class="project-desc-text">
+                        A detailed static representation of the Amazon landing interface, engineered using semantic HTML
+                        structure and CSS layouts (Flexbox/Grid) to master core visual design tokens and user flow
+                        positioning.
+                    </p>
+                    <div class="project-tech-badges">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">Flexbox Layout</span>
+                        <span class="tech-badge">Responsive Grid</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Madansingh7/Simple-Amazon-clone/blob/f3dc82428e469c4c1af1c41b346861b2cdaae77b/index.html"
+                            target="_blank" rel="noopener" class="btn btn-secondary">
+                            <i class="fa-brands fa-github"></i> View Repository
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------------------------
+       7. Timeline / Learning Journey
+       ------------------------------------------------------------------------- -->
+    <section id="timeline" class="section container">
+        <div class="section-header" data-reveal>
+            <span class="section-tag">05. TIMELINE</span>
+            <h2 class="section-title">Academic Journey</h2>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-line-art"></div>
+
+            <!-- Item 3: Present -->
+            <div class="timeline-item delay-100" data-reveal>
+                <div class="timeline-dot active-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Present 🎯</div>
+                    <h3 class="timeline-title-text">DSA and Web Development</h3>
+                    <p class="timeline-desc">
+                        Currently focused on deepening my understanding of Data Structures and Algorithms (DSA) while
+                        actively building a strong foundation in modern web development technologies and best practices.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 2: College -->
+            <div class="timeline-item delay-200" data-reveal>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Sept 2024 - Present</div>
+                    <h3 class="timeline-title-text">S.D.M College of Engineering & Technology</h3>
+                    <p class="timeline-desc">
+                        Academically pursuing the Bachelor of Engineering (B.E.) degree within the Computer Science
+                        Engineering program at S.D.M. College of Engineering and Technology, located in Dharwad.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 1: PUC college -->
+            <div class="timeline-item delay-300" data-reveal>
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2022-2024</div>
+                    <h3 class="timeline-title-text">K.L.E Prerana PU College</h3>
+                    <p class="timeline-desc">
+                        Completed my PUC education at K.L.E Prerana PU College, Hubballi - 580031.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------------------------
+       8. Certifications & Achievements Section
+       ------------------------------------------------------------------------- -->
+    <section id="certifications" class="section container">
+        <div class="section-header" data-reveal>
+            <span class="section-tag">06. MILESTONES</span>
+            <h2 class="section-title">Certifications & Achievements</h2>
+        </div>
+
+        <div class="achievements-grid">
+            <!-- Achievement 1 -->
+            <div class="achievement-card glass-card neumorphic-card" data-reveal>
+                <div class="achievement-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 class="achievement-title">Programming in Modern C++</h3>
+                <span class="achievement-issuer">NPTEL | IIT Kharagpur</span>
+                <p class="achievement-desc">Successfully completed a 12-week intensive course on modern C++ principles
+                    with an Elite score of <b>76%</b></p>
+                <a href="#" target="_blank" rel="noopener" class="btn btn-cert">
+                    <i class="fa-solid fa-certificate"></i> View Certificate
+                </a>
+            </div>
+
+            <!-- Achievement 2 -->
+            <div class="achievement-card glass-card neumorphic-card delay-100" data-reveal>
+                <div class="achievement-icon">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <h3 class="achievement-title">Certificate of Excellence</h3>
+                <span class="achievement-issuer">HackerRank Orchestrate May 2026</span>
+                <p class="achievement-desc">Awarded for building a multi-domain AI support triage agent and securing
+                    <b>1117th place globally</b> during the Hackathon.
+                </p>
+                <a href="#" target="_blank" rel="noopener" class="btn btn-cert">
+                    <i class="fa-solid fa-certificate"></i> View Certificate
+                </a>
+            </div>
+
+            <!-- Achievement 3 -->
+            <div class="achievement-card glass-card neumorphic-card delay-200" data-reveal>
+                <div class="achievement-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="achievement-title">Problem Solving (Basic)</h3>
+                <span class="achievement-issuer">HackerRank</span>
+                <p class="achievement-desc">Successfully passed the HackerRank skill certification test for Problem
+                    Solving (Basic), validating core DSA competencies.</p>
+                <a href="#" target="_blank" rel="noopener" class="btn btn-cert">
+                    <i class="fa-solid fa-certificate"></i> View Certificate
+                </a>
+            </div>
+
+            <!-- Achievement 4 -->
+            <div class="achievement-card glass-card neumorphic-card delay-300" data-reveal>
+                <div class="achievement-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="achievement-title">Cyber Job Simulation</h3>
+                <span class="achievement-issuer">Deloitte | Forage</span>
+                <p class="achievement-desc">Completed practical tasks in Cybersecurity via the Deloitte Job Simulation,
+                    gaining real-world defensive security insight.</p>
+                <a href="#" target="_blank" rel="noopener" class="btn btn-cert">
+                    <i class="fa-solid fa-certificate"></i> View Certificate
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------------------------
+       9. Contact Section
+       ------------------------------------------------------------------------- -->
+    <section id="contact" class="section container">
+        <div class="section-header" data-reveal>
+            <span class="section-tag">07. MESSAGE ME</span>
+            <h2 class="section-title">Contact</h2>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info" data-reveal>
+                <h3 class="contact-heading">Let's build something epic.</h3>
+                <p class="contact-text">
+                    I'm always looking for collaborative software projects, engineering internships, and networking
+                    opportunities. Reach out via email, LinkedIn, or send a message directly using the form.
+                </p>
+
+                <div class="contact-details-list">
+                    <div class="contact-detail-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>madansingh7@yahoo.com</span>
+                    </div>
+                    <div class="contact-detail-item">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>linkedin.com/in/madansingh7</span>
+                    </div>
+                    <div class="contact-detail-item">
+                        <i class="fa-brands fa-github"></i>
+                        <span>github.com/madansingh7</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beautiful Contact Form Card -->
+            <div class="contact-card glass-card neumorphic-card delay-200" data-reveal>
+                <form id="contact-form" class="contact-form-element">
+                    <div class="form-group">
+                        <label for="contact-name" class="form-label">Name</label>
+                        <input type="text" id="contact-name" class="form-input neumorphic-input" placeholder="Your Name"
+                            required autocomplete="name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email" class="form-label">Email</label>
+                        <input type="email" id="contact-email" class="form-input neumorphic-input"
+                            placeholder="your.email@example.com" required autocomplete="email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message" class="form-label">Message</label>
+                        <textarea id="contact-message" class="form-input neumorphic-input textarea"
+                            placeholder="Write your inquiry here..." required></textarea>
+                    </div>
+
+                    <div class="contact-status-block">
+                        <div id="contact-status-msg" class="status-msg" aria-live="polite" aria-atomic="true"></div>
+                    </div>
+
+                    <button type="submit" id="contact-send-btn" class="btn btn-primary neumorphic-btn">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- -------------------------------------------------------------------------
+       11. Footer
+       ------------------------------------------------------------------------- -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="footer-name">Madan Singh</span>
+                <span class="footer-tagline">B.E. CS @ SDMCET · Building Tomorrow's Code Today</span>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://github.com/madansingh7" target="_blank" rel="noopener" aria-label="GitHub"
+                    title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/madansingh7" target="_blank" rel="noopener" aria-label="LinkedIn"
+                    title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://leetcode.com/u/madansingh7/" target="_blank" rel="noopener" aria-label="LeetCode"
+                    title="LeetCode"><i class="fa-solid fa-code"></i></a>
+                <a href="mailto:madansingh7@yahoo.com" aria-label="Email" title="Email"><i
+                        class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#profiles">Profiles</a>
+                <a href="#projects">Projects</a>
+                <a href="#timeline">Journey</a>
+                <a href="#certifications">Achievements</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <p class="copyright">&copy; 2026 Madan Singh Rajpurohit. Crafted with passion.</p>
+        </div>
+    </footer>
+
+    <!-- -------------------------------------------------------------------------
+       12. Proton AI Chatbot Panel & Floating Button
+       ------------------------------------------------------------------------- -->
+    <div id="ai-widget-container">
+        <!-- Floating Chat Button -->
+        <button id="ai-chat-btn" class="ai-chat-trigger" aria-label="Open AI Assistant" title="Proton AI">
+            <span class="btn-pulse-ring"></span>
+            <div class="ai-btn-icon-wrapper">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+        </button>
+
+        <!-- Chat Panel -->
+        <div id="ai-chat-panel" class="ai-panel-container" aria-hidden="true">
+            <div class="ai-panel-header">
+                <div class="ai-header-profile">
+                    <div class="ai-avatar-wrapper">
+                        <div class="ai-avatar-status"></div>
+                        <i class="fa-solid fa-user-astronaut"></i>
+                    </div>
+                    <div class="ai-header-info">
+                        <h4 class="ai-assistant-name">Proton</h4>
+                        <span class="ai-assistant-status">Online · Recruiter Assistant</span>
+                    </div>
+                </div>
+                <button id="ai-panel-close" class="ai-close-btn" aria-label="Close chat window">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="ai-panel-body">
+                <div id="ai-chat-messages" class="ai-messages-container">
+                    <div class="ai-message assistant">
+                        <div class="message-bubble">Hi there! 👋 I am Proton, Madan's AI Assistant. Ask me anything
+                            about his skills, projects, academics, or contact details!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-panel-footer">
+                <!-- Suggested Prompts -->
+                <div class="ai-suggested-prompts">
+                    <button class="ai-suggestion-btn">Tell me about Madan</button>
+                    <button class="ai-suggestion-btn">What projects has he built?</button>
+                    <button class="ai-suggestion-btn">What skills does he have?</button>
+                    <button class="ai-suggestion-btn">What is his CGPA?</button>
+                    <button class="ai-suggestion-btn">How can I contact him?</button>
+                </div>
+
+                <!-- Input Form -->
+                <form id="ai-chat-form" class="ai-input-form">
+                    <input type="text" id="ai-chat-input" placeholder="Type a message..." autocomplete="off" required />
+                    <button type="submit" id="ai-chat-send" aria-label="Send message">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript Logic -->
+    <script src="script.js"></script>
+</body>
+
+</html>
